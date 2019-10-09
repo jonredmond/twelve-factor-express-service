@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/jonredmond/twelve-factor-express-service#readme",
   "dependencies": {
+    "dotenv": "^8.1.0",
     "express": "^4.17.1"
   }
 }
