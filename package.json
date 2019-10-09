@@ -1,0 +1,28 @@
+{
+  "name": "twelve-factor-express-service",
+  "version": "1.0.0",
+  "description": "Code along app to teach twelve factor app development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonredmond/twelve-factor-express-service.git"
+  },
+  "keywords": [
+    "12fa",
+    "SOLID",
+    "REST",
+    "express"
+  ],
+  "author": "Jon Redmond <jonredmond94@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonredmond/twelve-factor-express-service/issues"
+  },
+  "homepage": "https://github.com/jonredmond/twelve-factor-express-service#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
