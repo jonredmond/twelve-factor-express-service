@@ -1,0 +1,97 @@
+swagger: '2.0'
+info:
+  version: 'v1.0.0'
+  title: Todo Service
+  description: >-
+    Service is responsible for CRUD operations with todo items
+basePath: /todo-service/v1
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /todos:
+    post:
+      tags:
+        - Create New Todo
+      operationId: createNewTodo
+      summary: Create New Todo
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      schemes:
+        - https
+      parameters:
+        - $ref: '#/parameters/CreateTodoRequest'
+      responses:
+        201:
+          description: New item created and stored in the database
+    get:
+      tags:
+        - Get Todos For User
+      operationId: getTodosForUser
+      summary: Get Todos For User
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      schemes:
+        - https
+      parameters:
+        - $ref: '#/parameters/UserId'
+      responses:
+        200:
+          description: Todos belonging to that user returned from database
+  /todos/{id}:
+    put:
+      tags:
+        - Update Todo
+      operationId: updateTodo
+      summary: Update Todo
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      schemes:
+        - https
+      parameters:
+        - $ref: '#/parameters/TodoId'
+      responses:
+        204:
+          description: Successfully updated Todo
+parameters:
+  TodoId:
+    in: path
+    name: id
+    type: number
+    required: true
+  UserId:
+    in: query
+    name: userId
+    type: string
+    required: true
+  CreateTodoRequest:
+    in: body
+    name: CreateItemRequest
+    schema:
+      $ref: '#/definitions/Todo'
+    required: true
+definitions:
+  Todo:
+    type: object
+    properties:
+      user:
+        type: string
+        example: Jon
+      description:
+        type: string
+        example: Do expenses
+      done:
+        type: boolean
+        example: false
+    required:
+      - user
+      - description
