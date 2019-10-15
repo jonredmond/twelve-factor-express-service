@@ -5,3 +5,6 @@ CREATE TABLE tbl_todo (
   done BOOLEAN NOT NULL,
   PRIMARY KEY(todo_id)
 );
+
+INSERT INTO tbl_todo (user, todo_description, done)
+VALUES ('Jon', 'Do expenses', false);
