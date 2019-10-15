@@ -2,11 +2,13 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 
-const todos = require('./routes/todos');
+const routes = require('./routes');
 
 const port = process.env.PORT;
 
-app.use('/todos', todos);
+routes.forEach(({ path, router }) => {
+  app.use(path, router);
+});
 
 app.listen(port, () => {
   console.log('Listening on port: ' + port);

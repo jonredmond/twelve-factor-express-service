@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', () => {});
-router.post('/', () => {});
-router.put('/:id', () => {});
+router.get('/', (req, res) => {});
+router.post('/', (req, res) => {});
+router.put('/:id', (req, res) => {});
 
 module.exports = router;
